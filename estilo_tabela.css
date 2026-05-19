@@ -1,0 +1,324 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+     font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', 'serif';
+}
+
+/* ----- TOPO ----- */
+
+.container {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 90px;
+
+    background-color: rgb(103, 161, 254);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 40px;
+    opacity: 0.95;
+
+    z-index: 1000;
+
+    transition:
+        all 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+
+    will-change: width, transform, border-radius;
+}
+
+.container.shrink {
+    width: 50%;
+
+    left: 50%;
+    top: 5px;
+
+    transform: translateX(-50%);
+
+    border-radius: 18px;
+
+    padding: 0 25px;
+
+    box-shadow: 0 10px 40px rgb(255, 255, 255);
+}
+
+.logo {
+    height: 90px;
+    width: 270px;
+
+    margin-top: 5px;
+
+    cursor: text;
+
+    position: relative;
+
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#banner {
+    padding: 20px;
+
+    width: 50px;
+    height: 50px;
+}
+
+.logo h1 {
+    font-size: 30px;
+
+    margin-top: -80px;
+    margin-left: 80px;
+}
+
+.logo p {
+    color: blue;
+
+    margin-top: -2px;
+    margin-left: 80px;
+
+    font-size: 14px;
+}
+
+.container.shrink .logo {
+    transform: scale(0.82);
+    transform-origin: left center;
+}
+
+.container.shrink .menu {
+    gap: 2px;
+    margin-right: -10px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-right: 100px;
+
+    transition:
+        gap 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.menu a {
+    text-decoration: none;
+
+    padding: 17px;
+
+    color: black;
+
+    font-size: 15.5px;
+
+    text-transform: uppercase;
+
+    transition:
+        transform 0.4s ease,
+        padding 0.65s ease,
+        font-size 0.65s ease,
+        color 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+.menu a:hover {
+    transform: scale(1.15);
+
+    color: rgb(25, 25, 205);
+
+    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.434);
+}
+
+.container.shrink .menu {
+    gap: 2px;
+}
+
+.container.shrink .menu a {
+    padding: 10px;
+
+    font-size: 13px;
+}
+
+/* ----- TABELA ----- */
+
+.secao-planos {
+    display: flex;
+}
+
+.tabela-planos {
+    margin-top: 200px;
+    margin-left: 170px;
+    margin-bottom: 140px;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+
+    border-collapse: collapse;
+    background-color: #ffffff;
+    animation: glow 3s infinite;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 10px 20px rgb(0, 94, 255);
+
+    }
+
+    50% {
+        box-shadow: 0 10px 40px rgb(51, 61, 255);
+    }
+
+    70% {
+        box-shadow: 0 10px 60px rgb(17, 0, 255);
+    }
+
+    90% {
+        box-shadow: 0 10px 40px rgb(54, 35, 255);
+    }
+
+    100% {
+        box-shadow: 0 10px 20px rgb(0, 94, 255);
+    }  
+}
+
+.tabela-planos th {
+    padding: 18px 10px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+    background-color: #f1f1f1;
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.tabela-planos th:first-child {
+    background-color: transparent;
+    border: none;
+}
+
+.plano-titulo {
+    font-size: 14px;
+    color: #999;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.plano-preco {
+    display: block;
+    margin-top: 5px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+}
+
+.tabela-planos td {
+    padding: 18px 15px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    font-size: 13px;
+    color: #222;
+    background-color: #fff;
+}
+
+.tabela-planos .coluna-recurso {
+    text-align: left;
+    background-color: #f1f1f1;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 260px;
+}
+
+.linha-alternada td {
+    background-color: #fcfcfc;
+}
+
+.linha-alternada .coluna-recurso {
+    background-color: #ececec;
+}
+
+.indicador-recurso {
+    width: 14px;
+    height: 14px;
+    background-color: #2f80d1;
+    border-radius: 50%;
+    margin: auto;
+}
+
+/* ----- RODAPÉ ----- */
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    height: 170px;
+    background-color: rgb(103, 161, 254);
+}
+
+.logo2 {
+    margin-left: 530px;
+    height: 90px;
+    width: 270px;
+    margin-top: 25px;
+    cursor: text;
+}
+
+#banner-2 {
+    padding: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.logo2 h1 {
+    font-size: 30px;
+    margin-top: -80px;
+    margin-left: 80px;
+}
+
+.logo2 p {
+    color: rgb(255, 255, 255);
+    margin-top: -2px;
+    margin-left: 80px;
+    font-size: 14px;
+}
+
+.text-rod p {
+    color: rgb(255, 255, 255);
+    margin-top: -10px;
+    margin-left: 50px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* ----- DESENVOLVIMENTO ----- */
+
+.aluno {
+    height: 50px;
+    background-color: rgb(232, 232, 232);
+    text-align: center;
+
+    display: flex;
+}
+
+.aluno p {
+    margin-top: 20px;
+    margin-left: 530px;
+    font-size: 19px;
+    color: black;
+    font-weight: bold;
+}
+
+.aluno b {
+    color: blue;
+}

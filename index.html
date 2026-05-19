@@ -233,7 +233,17 @@
     <div class="aluno">
         <p>Desenvolvido por <b>Israel Quintão</b></p>
     </div>
-    
-    
 </body>
 </html>
+
+<script>
+  const container = document.querySelector('.container');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            container.classList.add('shrink');
+        } else {
+            container.classList.remove('shrink');
+        }
+    });
+</script>
