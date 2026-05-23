@@ -1,6 +1,7 @@
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -8,14 +9,13 @@ html {
 }
 
 body {
-     font-family: 'Cambria', 'Cochin', Georgia, Times, 'Times New Roman', 'serif';
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-/* ----- TOPO ----- */
+/* ---------------- TOPO ---------------- */
 
 .container {
     position: fixed;
-
     top: 0;
     left: 0;
 
@@ -25,195 +25,141 @@ body {
     background-color: rgb(103, 161, 254);
 
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
     padding: 0 40px;
-    opacity: 0.95;
 
+    opacity: .95;
     z-index: 1000;
-
-    transition:
-        all 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-
-    will-change: width, transform, border-radius;
+    transition: .6s;
 }
 
 .container.shrink {
     width: 50%;
-
     left: 50%;
     top: 5px;
-
     transform: translateX(-50%);
-
     border-radius: 18px;
-
     padding: 0 25px;
-
-    box-shadow: 0 10px 40px rgb(255, 255, 255);
+    box-shadow: 0 10px 40px rgb(255,255,255);
 }
 
 .logo {
-    height: 90px;
     width: 270px;
-
-    margin-top: 5px;
-
-    cursor: text;
-
+    height: 90px;
     position: relative;
-
-    transition:
-        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 #banner {
-    padding: 20px;
-
     width: 50px;
     height: 50px;
+    padding: 20px;
 }
 
 .logo h1 {
     font-size: 30px;
-
     margin-top: -80px;
     margin-left: 80px;
 }
 
 .logo p {
-    color: blue;
-
-    margin-top: -2px;
     margin-left: 80px;
-
     font-size: 14px;
-}
-
-.container.shrink .logo {
-    transform: scale(0.82);
-    transform-origin: left center;
-}
-
-.container.shrink .menu {
-    gap: 2px;
-    margin-right: -10px;
+    color: white;
 }
 
 .menu {
     display: flex;
     align-items: center;
-    gap: 8px;
-
-    margin-right: 100px;
-
-    transition:
-        gap 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    gap: 12px;
 }
 
 .menu a {
     text-decoration: none;
-
-    padding: 17px;
-
     color: black;
-
-    font-size: 15.5px;
-
+    font-size: 15px;
     text-transform: uppercase;
-
-    transition:
-        transform 0.4s ease,
-        padding 0.65s ease,
-        font-size 0.65s ease,
-        color 0.3s ease,
-        text-shadow 0.3s ease;
+    padding: 14px;
+    transition: .3s;
 }
 
 .menu a:hover {
-    transform: scale(1.15);
-
+    transform: scale(1.1);
     color: rgb(25, 25, 205);
-
-    text-shadow: 0 2px 7px rgba(0, 0, 0, 0.434);
 }
 
-.container.shrink .menu {
-    gap: 2px;
-}
-
-.container.shrink .menu a {
-    padding: 10px;
-
-    font-size: 13px;
-}
-
-/* ----- TABELA ----- */
+/* ---------------- TABELA ---------------- */
 
 .secao-planos {
+    width: 100%;
     display: flex;
+    justify-content: center;
+    padding-top: 140px;
+    padding-bottom: 100px;
 }
 
 .tabela-planos {
-    margin-top: 200px;
-    margin-left: 170px;
-    margin-bottom: 140px;
-    text-align: center;
-    width: 100%;
+    width: 90%;
     max-width: 900px;
 
     border-collapse: collapse;
-    background-color: #ffffff;
+    background: white;
+    text-align: center;
+
     animation: glow 3s infinite;
 }
 
 @keyframes glow {
     0% {
-        box-shadow: 0 10px 20px rgb(0, 94, 255);
-
+        box-shadow: 0 10px 20px rgb(0,94,255);
     }
 
     50% {
-        box-shadow: 0 10px 40px rgb(51, 61, 255);
-    }
-
-    70% {
-        box-shadow: 0 10px 60px rgb(17, 0, 255);
-    }
-
-    90% {
-        box-shadow: 0 10px 40px rgb(54, 35, 255);
+        box-shadow: 0 10px 40px rgb(51,61,255);
     }
 
     100% {
-        box-shadow: 0 10px 20px rgb(0, 94, 255);
-    }  
+        box-shadow: 0 10px 20px rgb(0,94,255);
+    }
 }
 
 .tabela-planos th {
     padding: 18px 10px;
-    text-align: center;
     border: 1px solid #e5e5e5;
-    background-color: #f1f1f1;
-    color: #000;
+    background: #f1f1f1;
     font-size: 13px;
-    font-weight: 600;
+}
+
+.tabela-planos td {
+    padding: 18px 15px;
+    border: 1px solid #e8e8e8;
+    font-size: 13px;
+}
+
+.coluna-recurso {
+    text-align: left;
+    background: #f1f1f1;
+    font-weight: bold;
+    width: 260px;
     text-transform: uppercase;
 }
 
-.tabela-planos th:first-child {
-    background-color: transparent;
-    border: none;
+.linha-alternada td {
+    background: #fcfcfc;
+}
+
+.indicador-recurso {
+    width: 14px;
+    height: 14px;
+    background: #2f80d1;
+    border-radius: 50%;
+    margin: auto;
 }
 
 .plano-titulo {
     font-size: 14px;
     color: #999;
-    font-weight: 600;
-    line-height: 1.6;
 }
 
 .plano-preco {
@@ -221,63 +167,32 @@ body {
     margin-top: 5px;
     font-size: 28px;
     font-weight: bold;
-    color: #000;
+    color: black;
 }
 
-.tabela-planos td {
-    padding: 18px 15px;
-    text-align: center;
-    border: 1px solid #e8e8e8;
-    font-size: 13px;
-    color: #222;
-    background-color: #fff;
-}
-
-.tabela-planos .coluna-recurso {
-    text-align: left;
-    background-color: #f1f1f1;
-    font-weight: 600;
-    text-transform: uppercase;
-    width: 260px;
-}
-
-.linha-alternada td {
-    background-color: #fcfcfc;
-}
-
-.linha-alternada .coluna-recurso {
-    background-color: #ececec;
-}
-
-.indicador-recurso {
-    width: 14px;
-    height: 14px;
-    background-color: #2f80d1;
-    border-radius: 50%;
-    margin: auto;
-}
-
-/* ----- RODAPÉ ----- */
+/* ---------------- RODAPÉ ---------------- */
 
 .rodape {
+    background-color: rgb(103, 161, 254);
+
     display: flex;
     flex-direction: column;
-    height: 170px;
-    background-color: rgb(103, 161, 254);
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
 }
 
 .logo2 {
-    margin-left: 530px;
-    height: 90px;
     width: 270px;
-    margin-top: 25px;
-    cursor: text;
+    position: relative;
+    margin-bottom: 15px;
 }
 
 #banner-2 {
-    padding: 20px;
     width: 50px;
     height: 50px;
+    padding: 20px;
 }
 
 .logo2 h1 {
@@ -287,38 +202,61 @@ body {
 }
 
 .logo2 p {
-    color: rgb(255, 255, 255);
-    margin-top: -2px;
     margin-left: 80px;
     font-size: 14px;
+    color: white;
 }
 
 .text-rod p {
-    color: rgb(255, 255, 255);
-    margin-top: -10px;
-    margin-left: 50px;
-    text-align: center;
+    color: white;
     font-size: 16px;
+    text-align: center;
+    line-height: 24px;
 }
 
-/* ----- DESENVOLVIMENTO ----- */
+/* ---------------- DESENVOLVIMENTO ---------------- */
 
 .aluno {
     height: 50px;
-    background-color: rgb(232, 232, 232);
-    text-align: center;
+    background: rgb(232,232,232);
 
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .aluno p {
-    margin-top: 20px;
-    margin-left: 530px;
-    font-size: 19px;
-    color: black;
+    font-size: 18px;
     font-weight: bold;
+    margin: 0;
 }
 
 .aluno b {
     color: blue;
+}
+
+/* ---------------- RESPONSIVO ---------------- */
+
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tabela-planos {
+        width: 95%;
+        font-size: 12px;
+    }
+
+    .logo h1,
+    .logo2 h1 {
+        font-size: 24px;
+    }
 }
